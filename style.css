@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 * {
   margin: 0;
@@ -12,23 +12,27 @@ a {
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.4;
 }
 
-.showcase {
-  background: rgba(133, 112, 112, 0.6);
-  height: 100vh;
+#showcase {
+  background: rgba(77, 71, 71, 0.5);
+  height: 100%;
   position: relative;
+  overflow: hidden;
 }
 
-.showcase:before {
-  content: '';
-  background: url('./img/background-christmas.jpg') no-repeat center center/cover;
+#showcase:before {
+  content: "";
+  background-image: url("./img/fondo-navidad.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  height: 1600px;
+  width: 2000px;
   z-index: -1;
 }
 
@@ -36,20 +40,82 @@ ul {
   list-style: none;
 }
 
-.container {
+.candy-cane {
+  background: url("./img/candy-cane.png") no-repeat center center / cover;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 0;
+}
+
+.card {
+  border: 1px solid #bbb;
+  max-width: 450px;
+  position: relative;
+  /* max-height: 600px; */
+}
+
+.card-img {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+.card-img .nombre-promo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: red;
+  padding: 0.1rem 0.9rem 0.1rem 0.3rem;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 0 0px 15px 0;
+}
+
+.contenedor {
   max-width: 1100px;
   margin: auto;
 }
 
-#navbar {
-  color: #444;
-  /* position: absolute; */
+.f-sm {
+  font-size: 0.9rem;
 }
 
-#navbar .navbar-content {
+.hr-producto {
+  width: 80%;
+  height: 3px;
+  margin: 0.75rem auto;
+  background-color: green;
+}
+
+.lead {
+  font-weight: 400;
+  margin: 0.4rem 0;
+  color: #666;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.titulo-m {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.titulo-s {
+  font-weight: 700;
+  font-size: 20px;
+  color: #444;
+}
+
+#navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 0 5rem;
+  color: #fff;
+  text-align: center;
 }
 
 #navbar img {
@@ -59,14 +125,23 @@ ul {
 
 #navbar ul {
   display: flex;
+  align-items: center;
+}
+
+#navbar ul li {
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  padding: 1rem;
 }
 
 #navbar ul li a {
   color: #444;
-  margin-right: 50px;
+  font-weight: bold;
+  padding: 0.4rem;
   padding-bottom: 0.5rem;
   border-bottom: 3px transparent solid;
+  margin-right: 0.2rem;
 }
 
 #navbar ul li a.current {
@@ -75,4 +150,65 @@ ul {
 
 #navbar ul li a:hover {
   border-color: rgba(255, 255, 255, 0.8);
+}
+
+#contenedor-botas {
+  color: #333;
+  position: relative;
+  padding: 2rem 3rem;
+  margin: 2rem 1rem;
+  border-radius: 4px;
+  min-height: 600px;
+  background: #eee;
+}
+
+#contenedor-botas h1 {
+  display: inline-block;
+  border-bottom: 2px #212170 solid;
+  padding-bottom: 0.15rem;
+  margin-bottom: 0.25rem;
+}
+
+#contenedor-botas .grid-botas {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 1rem;
+  margin-top: 1rem;
+}
+
+.grid-botas img {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  max-height: 440px;
+  max-width: 440px;
+}
+
+.gird-botas h2,
+h3,
+h4,
+p,
+a {
+  padding: 0 0.5rem;
+}
+
+@media (max-width: 500px) {
+  body:before {
+    transform: scale(1, 1);
+  }
+
+  #navbar {
+    flex-direction: column;
+  }
+
+  #navbar ul {
+    margin-top: 1rem;
+  }
+
+  #contenedor-botas {
+    min-height: 700px;
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 3rem;
+  }
 }
