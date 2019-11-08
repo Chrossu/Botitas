@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Lato&display=swap"); */
 
 * {
   margin: 0;
@@ -12,8 +13,12 @@ a {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lato", sans-serif;
   line-height: 1.4;
+}
+
+strong {
+  color: #e7ba34;
 }
 
 #showcase {
@@ -27,17 +32,21 @@ body {
   content: "";
   background-image: url("./img/fondo-navidad.jpg");
   background-size: cover;
-  background-position: center top;
+  background-position: center bottom;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
-  height: 1600px;
-  width: 2000px;
+  height: 800px;
+  width: 100vw;
   z-index: -1;
 }
 
 ul {
   list-style: none;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .candy-cane {
@@ -52,25 +61,36 @@ ul {
 
 .card {
   border: 1px solid #bbb;
-  max-width: 450px;
-  position: relative;
-  /* max-height: 600px; */
+  min-height: 400px;
 }
 
 .card-img {
-  margin: 0 auto;
+  position: relative;
+  margin: 0 auto 0.5rem auto;
   max-width: 450px;
+  max-height: 229px;
 }
 
 .card-img .nombre-promo {
   position: absolute;
   top: 0;
   left: 0;
-  background: red;
+  background: rgb(224, 3, 3);
   padding: 0.1rem 0.9rem 0.1rem 0.3rem;
   color: #fff;
   font-weight: bold;
   border-radius: 0 0px 15px 0;
+}
+
+.card-img .cantidad-promo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #00b8a9;
+  padding: 0.1rem 0.3rem 0.1rem 0.5rem;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 15px 0px 0px 0;
 }
 
 .contenedor {
@@ -78,21 +98,44 @@ ul {
   margin: auto;
 }
 
-.f-sm {
-  font-size: 0.9rem;
+.font-red {
+  color: #d62f2f;
 }
 
-.hr-producto {
-  width: 80%;
+.font-gray {
+  color: #555;
+}
+
+.font-med {
+  font-size: 1.1rem;
+}
+
+.font-sm {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.font-xs {
+  font-size: 0.7rem;
+}
+
+.separador-titulo {
+  width: 60%;
   height: 3px;
   margin: 0.75rem auto;
-  background-color: green;
+  background: white;
+  border-bottom: 2px dashed red;
+}
+
+.lato {
+  font-family: "Lato", sans-serif;
 }
 
 .lead {
+  font-size: 1.25rem;
   font-weight: 400;
   margin: 0.4rem 0;
-  color: #666;
+  color: #686868;
 }
 
 .text-center {
@@ -102,14 +145,19 @@ ul {
 .titulo-m {
   font-weight: 700;
   font-size: 24px;
+  margin-bottom: 0.2rem;
 }
 
 .titulo-s {
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 300;
+  font-size: 19px;
+  margin-bottom: 0.1rem;
   color: #444;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/*                                                  Navbar                                                                  */
+/* ------------------------------------------------------------------------------------------------------------------------ */
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -152,6 +200,9 @@ ul {
   border-color: rgba(255, 255, 255, 0.8);
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/*                                                  Contenedor Botas                                                        */
+/* ------------------------------------------------------------------------------------------------------------------------ */
 #contenedor-botas {
   color: #333;
   position: relative;
@@ -171,33 +222,63 @@ ul {
 
 #contenedor-botas .grid-botas {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
-.grid-botas img {
+#contenedor-botas .grid-botas img {
   height: 100%;
   width: 100%;
   margin: auto;
   margin-bottom: 0.5rem;
-  max-height: 440px;
+  max-height: 230px;
   max-width: 440px;
 }
 
-.gird-botas h2,
-h3,
-h4,
-p,
-a {
+#contenedor-botas .grid-botas h2,
+#contenedor-botas .grid-botas h3,
+#contenedor-botas .grid-botas h4,
+#contenedor-botas .grid-botas p,
+#contenedor-botas .grid-botas a {
   padding: 0 0.5rem;
 }
 
-@media (max-width: 500px) {
-  body:before {
-    transform: scale(1, 1);
-  }
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/*                                                  Info                                                                    */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+.showcase-info {
+  background: rgba(77, 71, 71, 0.5);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
+.showcase-info:before {
+  content: "";
+  background-image: url("./img/red-and-green-mistletoe-decoration-695971.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  height: 800px;
+  width: 100vw;
+  z-index: -1;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/*                                                  Footer                                                                  */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+#footer {
+  background: #333;
+  color: #eee;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------ */
+/*                                                  Media Query                                                             */
+/* ------------------------------------------------------------------------------------------------------------------------ */
+@media (max-width: 500px) {
   #navbar {
     flex-direction: column;
   }
@@ -210,5 +291,9 @@ a {
     min-height: 700px;
     padding: 0.5rem 0.7rem;
     margin-bottom: 3rem;
+  }
+
+  #contenedor-botas .grid-botas {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
