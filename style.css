@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
 /* @import url("https://fonts.googleapis.com/css?family=Lato&display=swap"); */
 
 * {
@@ -13,7 +13,7 @@ a {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.4;
 }
 
@@ -22,15 +22,15 @@ strong {
 }
 
 #showcase {
-  background: rgba(77, 71, 71, 0.5);
-  height: 100%;
   position: relative;
+  background: rgba(77, 71, 71, 0.15);
+  height: 100%;
   overflow: hidden;
 }
 
 #showcase:before {
-  content: "";
-  background-image: url("./img/fondo-navidad.jpg");
+  content: '';
+  background-image: url('./img/fondo-navidad.jpg');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -49,19 +49,10 @@ ul {
   font-weight: bold;
 }
 
-.candy-cane {
-  background: url("./img/candy-cane.png") no-repeat center center / cover;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 0;
-}
-
 .card {
   border: 1px solid #bbb;
   min-height: 400px;
+  background: #f1f1f1;
 }
 
 .card-img {
@@ -99,11 +90,15 @@ ul {
 }
 
 .font-red {
-  color: #d62f2f;
+  color: #d62f2f !important;
 }
 
 .font-gray {
-  color: #555;
+  color: #555 !important;
+}
+
+.font-white {
+  color: #efefef !important;
 }
 
 .font-med {
@@ -128,11 +123,11 @@ ul {
 }
 
 .lato {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 400;
   margin: 0.4rem 0;
   color: #686868;
@@ -142,10 +137,19 @@ ul {
   text-align: center;
 }
 
+.titulo-l {
+  font-weight: 700;
+  font-size: 100px;
+  margin-bottom: 0.2rem;
+  color: #fff;
+  z-index: 200;
+}
+
 .titulo-m {
   font-weight: 700;
   font-size: 24px;
   margin-bottom: 0.2rem;
+  color: #444;
 }
 
 .titulo-s {
@@ -155,9 +159,9 @@ ul {
   color: #444;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------ */
-/*                                                  Navbar                                                                  */
-/* ------------------------------------------------------------------------------------------------------------------------ */
+/*-------------------------------------------------------------------------------------------------------- */
+/*                                         Navbar                                                          */
+/* ------------------------------------------------------------------------------------------------------- */
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -200,9 +204,9 @@ ul {
   border-color: rgba(255, 255, 255, 0.8);
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------ */
-/*                                                  Contenedor Botas                                                        */
-/* ------------------------------------------------------------------------------------------------------------------------ */
+/*-------------------------------------------------------------------------------------------------------- */
+/*                                         Contenedor botas                                                */
+/* ------------------------------------------------------------------------------------------------------- */
 #contenedor-botas {
   color: #333;
   position: relative;
@@ -210,7 +214,7 @@ ul {
   margin: 2rem 1rem;
   border-radius: 4px;
   min-height: 600px;
-  background: #eee;
+  background: #fff;
 }
 
 #contenedor-botas h1 {
@@ -227,6 +231,16 @@ ul {
   margin-top: 1.25rem;
 }
 
+#contenedor-botas .candy-cane {
+  background: url('./img/candy-cane.png') no-repeat center center / cover;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 0;
+}
+
 #contenedor-botas .grid-botas img {
   height: 100%;
   width: 100%;
@@ -237,16 +251,60 @@ ul {
 }
 
 #contenedor-botas .grid-botas h2,
-#contenedor-botas .grid-botas h3,
-#contenedor-botas .grid-botas h4,
-#contenedor-botas .grid-botas p,
-#contenedor-botas .grid-botas a {
+#contenedor-botas .grid-botas p {
   padding: 0 0.5rem;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------ */
-/*                                                  Info                                                                    */
-/* ------------------------------------------------------------------------------------------------------------------------ */
+.overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-popup {
+  position: relative;
+  top: 50px;
+  background: #f0f0f0;
+  padding: 0.25rem;
+}
+
+.img-popup {
+  background: url('./img/popup-background.jpg') center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff !important;
+  filter: brightness(50%);
+  width: 600px;
+  height: 200px;
+}
+
+.popup-content {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  color: #333;
+}
+
+.fa-times-circle {
+  cursor: pointer;
+  background: #222;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 2;
+}
+
+/*-------------------------------------------------------------------------------------------------------- */
+/*                                         Info                                                            */
+/* ------------------------------------------------------------------------------------------------------- */
 .showcase-info {
   background: rgba(77, 71, 71, 0.5);
   height: 100%;
@@ -255,8 +313,8 @@ ul {
 }
 
 .showcase-info:before {
-  content: "";
-  background-image: url("./img/red-and-green-mistletoe-decoration-695971.jpg");
+  content: '';
+  background-image: url('./img/red-and-green-mistletoe-decoration-695971.jpg');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -267,17 +325,17 @@ ul {
   z-index: -1;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------ */
-/*                                                  Footer                                                                  */
-/* ------------------------------------------------------------------------------------------------------------------------ */
+/*-------------------------------------------------------------------------------------------------------- */
+/*                                         Footer                                                          */
+/* ------------------------------------------------------------------------------------------------------- */
 #footer {
   background: #333;
   color: #eee;
 }
 
-/* ------------------------------------------------------------------------------------------------------------------------ */
-/*                                                  Media Query                                                             */
-/* ------------------------------------------------------------------------------------------------------------------------ */
+/*-------------------------------------------------------------------------------------------------------- */
+/*                                         Media Query                                                     */
+/* ------------------------------------------------------------------------------------------------------- */
 @media (max-width: 500px) {
   #navbar {
     flex-direction: column;
@@ -291,6 +349,21 @@ ul {
     min-height: 700px;
     padding: 0.5rem 0.7rem;
     margin-bottom: 3rem;
+  }
+
+  #contenedor-botas h1 {
+    font-size: 1.1rem;
+  }
+
+  #contenedor-botas p {
+    font-size: 13px;
+  }
+
+  #contenedor-botas .candy-cane {
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
   }
 
   #contenedor-botas .grid-botas {
